@@ -1,0 +1,323 @@
+html {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: "sf", "Arial", sans-serif;
+  cursor: default;
+  height: 100%;
+  width: 900px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid grey;
+}
+
+@font-face {
+  font-family: "sf";
+  src: url("../fonts/sf-pro-display-medium.woff2") format("woff2"),
+  url("../fonts/sf-pro-display-medium.woff") format("woff");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/*Компонент форма*/
+/*Часто используемы цвета*/
+:root {
+  --red__basic: hsl(0, 76%, 59%);
+  --light__red: rgba(230, 70, 70, .3);
+  --black__basic: rgb(0, 0, 0);
+  --white__basic: rgb(255, 255, 255);
+  --basic__grey: rgb(128, 128, 128);
+  --light__grey: rgb(226, 225, 225);
+  --basic__blue: rgb(81, 129, 184);
+  --light__blue: rgba(81, 129, 184, .5);
+  --darker__blue: rgba(81, 129, 184, .8);
+
+  --darken__night-theme: rgb(17, 17, 17);
+  --grey__text: rgb(117, 117, 117);
+  --basic__yellow: rgb(255, 188, 4);
+  --light__yellow: rgba(255, 188, 4, .5);
+}
+
+/* Светлая тема*/
+
+.form {
+  width: 900px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+
+.form__wrap-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form__wrap-title svg {
+  width: 50px;
+  height: 40px;
+}
+
+.form__wrap-name {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.form__wrap-age,
+.form__residence {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__input,
+.form__select {
+  border: 2px solid var(--light__grey);
+  height: 25px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-family: "sf", "Arial", sans-serif;
+}
+
+.form__select {
+  height: 30px;
+}
+
+.form__textarea {
+  height: 100px;
+  width: 350px;
+  border-radius: 15px;
+  padding: 10px;
+  border: 2px solid var(--light__grey);
+}
+
+.form__input:hover,
+.form__input:focus,
+.form__select:hover,
+.form__select:focus
+.form__textarea:hover,
+.form__textarea:focus {
+  border: 2px solid var(--basic__blue);
+  outline: none;
+}
+
+.form__input:active,
+.form__select:active,
+.form__textarea:active {
+  border: 2px solid var(--basic__blue);
+  outline: none;
+}
+
+.form__upload-field-wrap {
+  margin-top: 10px;
+}
+
+.form__wrap-checkbox {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form__wrap-checkbox p {
+  margin-top: 0px;
+  margin-right: 20px;
+}
+
+.form__wrap-checkbox label {
+  margin-left: 10px;
+}
+
+.form__checkbox {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form__checkbox-input {
+  opacity: 0;
+  position: absolute;
+}
+
+.form__checkbox-pseudo {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: 1px solid var(--light__grey);
+  cursor: pointer;
+}
+
+.form__checkbox-pseudo:hover {
+  border: 1px solid var(--basic__grey);
+}
+
+.form__checkbox-input:checked + .form__checkbox-pseudo::before {
+  content: 'Г';
+  font-weight: bold;
+  color: var(--basic__blue);
+  transform: rotate(220deg);
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+}
+
+.form__checkbox-text {
+  margin-left: 10px;
+}
+
+.form__button {
+  font-family: inherit;
+  cursor: pointer;
+  width: 180px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
+.form__submit {
+  background-color: var(--basic__blue);
+  color: var(--white__basic);
+}
+
+.form__submit:hover,
+.form__submit:focus,
+.form__submit:disabled {
+  background-color: var(--light__blue);
+  outline: none;
+}
+
+.form__submit:active {
+  background-color: var(--darker__blue);
+  border: 2px solid var(--basic__black);
+}
+
+.form__reset {
+  width: 100px;
+  padding-left: 30px;
+  color: var(--red__basic);
+  border: 1px solid var(--red__basic);
+  background: url('../img/trash.svg') no-repeat 5px 6px;
+}
+
+.form__reset:hover,
+.form__reset:focus {
+  background-color: var(--light__red);
+  outline: none;
+}
+
+.form__reset:active {
+  background-color: var(--light__red);
+  border: 2px solid var(--red__basic);
+}
+
+.form__change {
+  position: relative;
+  width: 35px;
+  border-radius: 100%;
+  background-color: transparent;
+  fill: var(--basic__grey);
+}
+
+.form__change:hover,
+.form__change:focus {
+  fill: var(--basic__yellow);
+  outline: none;
+}
+
+.form__change:active {
+  fill: var(--light__yellow);
+  outline: none;
+}
+
+/*Темная тема*/
+
+.form--night {
+  color: var(--grey__text);
+  background-color: var(--darken__night-theme);
+}
+
+.form__input--night,
+.form__select--night {
+  border: 1px solid var(--light__grey);
+  background-color: var(--darken__night-theme);
+  border-radius: 10px;
+  color: var(--white__basic);
+}
+
+.form__input--night:hover,
+.form__input--night:focus,
+.form__select--night:hover,
+.form__select--night:focus
+.form__textarea--night:hover,
+.form__textarea--night:focus {
+  border: 1px solid var(--basic__blue);
+}
+
+
+.form__input--night:active,
+.form__select--night:active,
+.form__textarea--night:active {
+  border: 1px solid var(--basic__blue);
+}
+
+.form__textarea--night {
+  background-color: transparent;
+  color: var(--white__basic);
+  border: 1px solid var(--white__basic);
+}
+
+.form__submit--night {
+  background-color: transparent;
+  border: 1px solid var(--basic__blue);
+  color: var(--white__basic);
+}
+
+.form__submit--night:hover,
+.form__submit--night:focus {
+  border: 2px solid var(--basic__blue);
+}
+
+.form__submit--night:active {
+  background-color: transparent;
+  border: 4px solid var(--basic__blue);
+}
+
+.page__body--night {
+  color: var(--grey__text);
+  background-color: var(--darken__night-theme);
+}
