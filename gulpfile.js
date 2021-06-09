@@ -1,3 +1,4 @@
+const path = require('path');
 const gulp = require("gulp");
 const ghPages = require('gh-pages');
 const plumber = require("gulp-plumber");
@@ -74,9 +75,9 @@ exports.sprite = sprite;
 
 const copy = (done) => {
   gulp.src([
-    "source/fonts/*.{woff2,woff}",
-    "source/img/trash.svg",
-  ], {
+    "source/fonts/*.{woff2,woff}"
+  ],
+  {
     base: "source"
   })
     .pipe(gulp.dest("build"))

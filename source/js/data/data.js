@@ -3,6 +3,7 @@ const data = {
     {
       'url': 'www.example.com',
       'type': 'POST',
+      'enctype': 'multipart/form-data',
     },
   ],
   'personalData': [
@@ -10,19 +11,19 @@ const data = {
       'label': 'Фамилия',
       'type': 'text',
       'id': 'surname',
-      'placeholder': 'Иванов'
+      'placeholder': 'Иванов',
     },
     {
       'label': 'Имя',
       'type': 'text',
       'id': 'name',
-      'placeholder': 'Иван'
+      'placeholder': 'Иван',
     },
     {
       'label': 'Отчество',
       'type': 'text',
       'id': 'patronymic',
-      'placeholder': 'Иванович'
+      'placeholder': 'Иванович',
     },
   ],
   'sex' : [
@@ -30,14 +31,14 @@ const data = {
       'id': 'men',
       'type': 'radio',
       'label': 'Мужчина',
-      'name' : 'sex'
+      'name' : 'sex',
     },
     {
       'id': 'women',
       'type': 'radio',
       'label': 'Женщина',
-      'name' : 'sex'
-    }
+      'name' : 'sex',
+    },
   ],
   'date' : [
     {
@@ -45,12 +46,6 @@ const data = {
       'label': 'Дата рождения',
       'placeholder': '',
       'type': 'date',
-    },
-    {
-      'id': 'age',
-      'label': 'Полный возраст',
-      'placeholder': '18',
-      'type': 'number',
     },
   ],
   'statistics' : [
@@ -62,7 +57,7 @@ const data = {
         'Замужем, женат',
         'Разведён, разведена',
         'Вдова, вдовец',
-      ]
+      ],
     },
     {
       'label': 'Образование',
@@ -72,7 +67,7 @@ const data = {
         'Среднее профессиональное',
         'Среднее (полное)',
         'Среднее',
-      ]
+      ],
     },
   ],
   'textPlace': [
@@ -86,7 +81,7 @@ const data = {
       'label': '...или можете загрузить текстовый документ',
       'placeholder': '',
       'type': 'file',
-      'accept' : '.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      'accept' : '.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     },
   ],
   'placeOfResidence' : [
@@ -100,7 +95,7 @@ const data = {
         'Волгоград',
         'Краснодар',
         'Сочи',
-      ]
+      ],
     },
   ],
   'contactInformation' : [
@@ -108,13 +103,13 @@ const data = {
       'label': 'Моб. телефон',
       'type': 'text',
       'id': 'phone',
-      'placeholder': '89518998989'
+      'placeholder': '89518998989',
     },
     {
       'label': 'Электронная почта',
       'type': 'text',
       'id': 'email',
-      'placeholder': 'example@example.ru'
+      'placeholder': 'example@example.ru',
     },
   ],
   'agreement' : [
@@ -125,8 +120,18 @@ const data = {
       'label': 'Я принимаю условия соглашения',
     },
   ],
-}
+  'button' : [
+    {
+      text: 'Отправить',
+      type: 'submit',
+    },
+    {
+      text: 'Сбросить',
+      type: 'reset',
+    },
+  ],
+};
 
 const dataJSON = JSON.stringify(data);
 
-export {dataJSON}
+export {dataJSON};
